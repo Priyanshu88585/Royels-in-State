@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "name": "Luxury Pool Villa",
+    "plot": 9000,
+    "built": 2832,
+    "price": "On Request",
+    "images": [
+      "/src/assets/house/house1.jpg",
+      "/src/assets/project/clubhouse.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Forest View Villa",
+    "plot": 9000,
+    "built": 2832,
+    "price": "On Request",
+    "images": [
+      "/src/assets/house/house2.jpg",
+      "/src/assets/house/house2.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Garden Estate",
+    "plot": 7500,
+    "built": 2100,
+    "price": "On Request",
+    "images": [
+      "/src/assets/house/house3.jpg",
+      "/src/assets/house/house3.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Beachfront Bungalow",
+    "plot": 5000,
+    "built": 1800,
+    "price": "On Request",
+    "images": [
+      "/src/assets/house/house4.jpg",
+      "/src/assets/house/house4.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Hilltop Retreat",
+    "plot": 10000,
+    "built": 3200,
+    "price": "On Request",
+    "images": [
+      "/src/assets/house/house5.jpg",
+      "/src/assets/house/house5.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Urban Penthouse",
+    "plot": 1200,
+    "built": 1400,
+    "price": "On Request",
+    "images": [
+      "/src/assets/house/house6.jpg",
+      "/src/assets/house/house6.jpg"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Modern Townhouse",
+    "plot": 2200,
+    "built": 1600,
+    "price": "On Request",
+    "images": [
+      "/src/assets/house/house7.jpg",
+      "/src/assets/house/house7.jpg"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Countryside Manor",
+    "plot": 15000,
+    "built": 5000,
+    "price": "On Request",
+    "images": [
+      "/src/assets/house/house8.jpg",
+      "/src/assets/house/house8.jpg"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Lakefront Cabin",
+    "plot": 3000,
+    "built": 1200,
+    "price": "On Request",
+    "images": [
+      "/src/assets/house/house9.jpg",
+      "/src/assets/house/house9.jpg"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Mountain Lodge",
+    "plot": 8000,
+    "built": 3500,
+    "price": "On Request",
+    "images": [
+      "/src/assets/house/house10.jpg",
+      "/src/assets/house/house10.jpg"
+    ]
+  }
+]

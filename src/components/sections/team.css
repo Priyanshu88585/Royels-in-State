@@ -1,0 +1,90 @@
+.team-section {
+  text-align: center;
+}
+
+/* grid layout */
+.team-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 60px;
+  flex-wrap: wrap;
+}
+
+/* glass premium card */
+.team-card {
+  width: 320px;
+  padding: 80px 20px 30px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  position: relative;
+  transition: 0.4s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(212,175,55,0.25);
+}
+
+/* profile image floating */
+.team-img-wrap {
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.team-img-wrap img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #d4af37;
+  background: #fff;
+}
+
+/* text styles */
+.team-card h3 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #d4af37;
+}
+
+.role {
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+.bio {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin: 12px 0 20px;
+}
+
+/* social icons */
+.social-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.social-row a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: 0.3s;
+}
+
+.social-row a:hover {
+  background: #d4af37;
+  color: black;
+  transform: scale(1.1);
+}

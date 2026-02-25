@@ -1,0 +1,18 @@
+/* src/components/ui/scrollprogress.css */
+.progress-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  z-index: 9998;
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, rgba(212,175,55,0.95), rgba(255,214,120,0.9));
+  box-shadow: 0 6px 28px rgba(212,175,55,0.12);
+  transition: width 0.15s linear;
+}

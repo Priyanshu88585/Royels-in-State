@@ -1,0 +1,688 @@
+/* ================= IMPORTS FIRST ================= */
+
+@import "./components/ui/cursor.css";
+@import "./components/ui/scrollprogress.css";
+@import "./components/ui/loader.css";
+@import "./components/ui/animated-border.css";
+
+/* ================= ROOT VARIABLES ================= */
+
+:root {
+  --primary: #0b1a14;
+  --secondary: #10271d;
+  --accent: #d4af37;
+  --glass: rgba(255, 255, 255, 0.05);
+  --text: #ffffff;
+}
+
+/* rest of your CSS below */
+/* ================= ROOT THEME ================= */
+
+:root {
+  --primary: #08140f;
+  --secondary: #0e231a;
+  --accent: #d4af37;
+  --accent-soft: #e6c16b;
+  --text: #ffffff;
+
+  --glass: rgba(255, 255, 255, 0.05);
+  --glass-strong: rgba(255, 255, 255, 0.08);
+
+  --border: rgba(255, 255, 255, 0.08);
+}
+
+/* ================= GLOBAL ================= */
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 20% 10%, #0c2218, transparent 60%),
+    radial-gradient(circle at 80% 0%, #05120d, transparent 60%),
+    #040b07;
+  line-height: 1.5;
+}
+
+/* ================= PAGE ================= */
+
+.page {
+  padding-top: 90px;
+  min-height: 100vh;
+}
+
+/* ================= PREMIUM FLOATING NAVBAR ================= */
+
+.navbar {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1200px, 94%);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 4px 22px;
+  z-index: 100;
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+}
+
+/* logo */
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--accent);
+}
+
+/* nav links */
+
+.nav-links {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #e5efe8;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--accent);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+}
+
+/* ================= HAMBURGER ================= */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.menu-toggle span {
+  width: 24px;
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+  .nav-links {
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    flex-direction: column;
+    width: 220px;
+
+    padding: 16px;
+    border-radius: 14px;
+
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(12px);
+
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 60px;
+  min-height: calc(100vh - 70px);
+  gap: 40px;
+}
+
+.hero-left {
+  width: 50%;
+}
+
+.hero-right {
+  width: 50%;
+}
+
+.hero-title {
+  font-size: 3.8rem;
+  margin-bottom: 20px;
+  color: var(--accent);
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.hero-sub {
+  font-size: 1.2rem;
+  color: #c9d6cc;
+  margin-bottom: 20px;
+}
+
+.hero-tagline {
+  font-style: italic;
+  color: #e5efe8;
+  margin-bottom: 30px;
+}
+
+/* ================= GLASS UI ================= */
+
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+/* ================= SECTION ================= */
+
+.section {
+  padding: 90px 60px;
+}
+
+.section-title {
+  font-size: 42px;
+  text-align: center;
+  color: var(--accent-soft);
+  margin-bottom: 40px;
+}
+
+/* ================= GRID ================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+/* ================= CARD ================= */
+
+.card {
+  padding: 22px;
+  border-radius: 16px;
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+
+  transition: all 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* ================= GOLD BUTTON ================= */
+
+.cta,
+.btn-gold {
+  background: linear-gradient(45deg, var(--accent), #ffd86f);
+  color: black;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.cta:hover,
+.btn-gold:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+}
+
+/* ================= FORM ================= */
+
+.form input,
+.form textarea {
+  width: 100%;
+  margin: 12px 0;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+/* ================= BACKGROUND SECTIONS ================= */
+
+.section-bg {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.overlay {
+  width: 100%;
+  padding: 80px 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.9)
+  );
+}
+
+.glass-card {
+  max-width: 1100px;
+  margin: auto;
+  padding: 50px;
+  border-radius: 20px;
+
+  background: var(--glass-strong);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+}
+
+/* ================= IMAGES ================= */
+
+.image {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.hover-zoom {
+  transition: transform 0.5s ease;
+}
+
+.hover-zoom:hover {
+  transform: scale(1.05);
+}
+
+/* ================= GALLERY ================= */
+
+.gallery-img {
+  width: 100%;
+  border-radius: 14px;
+}
+
+/* ================= PROGRESS BAR ================= */
+
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: var(--accent);
+  z-index: 200;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+  padding: 40px;
+  text-align: center;
+  color: #cde3d5;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    padding: 50px 20px;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
+  }
+
+  .grid,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 60px 20px;
+  }
+
+  .hero-title {
+    font-size: 2.4rem;
+  }
+
+  .glass-card {
+    padding: 30px;
+  }
+}
+
+/* add to bottom of src/index.css */
+
+/* ensure the custom cursor CSS is loaded as fallback if you didn't import cursor.css */
+@import "./components/ui/cursor.css";
+@import "./components/ui/scrollprogress.css";
+@import "./components/ui/loader.css";
+@import "./components/ui/animated-border.css";
+
+/* small helpers for interactive states */
+a, button {
+  cursor: none; /* hide default pointer so custom cursor is visible */
+}
+
+/* restore cursor for inputs */
+input, textarea, select, button[type="submit"] {
+  cursor: auto;
+}
+
+/* clickable elements highlight for cursor */
+a:hover ~ .cursor-ring,
+button:hover ~ .cursor-ring {
+  transform: scale(1.05);
+}
+
+/* ensure loader overlay sits above everything */
+.loader-wrap { z-index: 20000; }
+
+/* if you prefer to keep default cursor on debug set cursor: auto on body */
+
+/* ================= MASTERPLAN SLIDER ================= */
+
+.masterplan-section {
+  position: relative;
+  padding: 80px 0;
+}
+
+.master-slider {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.master-card {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.master-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.master-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+/* Cursor Glow */
+.cursor-glow {
+  position: fixed;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(212,175,55,0.25), transparent 70%);
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+/* Scroll progress */
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(to right, #d4af37, #fff1a6);
+  transform-origin: left;
+  width: 100%;
+  z-index: 999;
+}
+
+html, body {
+  height: auto;
+  scroll-behavior: auto;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ===================== VILLA CARDS ===================== */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+
+/* card container */
+.villa-card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.villa-card:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+/* image */
+.villa-img-wrap {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.villa-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.villa-card:hover .villa-img {
+  transform: scale(1.1);
+}
+
+/* overlay gradient */
+.villa-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.1)
+  );
+}
+
+/* content */
+.villa-content {
+  padding: 20px 10px 10px 10px;
+}
+
+/* title */
+.villa-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+/* specs */
+.villa-specs {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #b7c7bb;
+  margin-bottom: 14px;
+}
+
+/* footer */
+.villa-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* price */
+.villa-price {
+  font-size: 1.2rem;
+  color: #d4af37;
+  font-weight: 600;
+}
+
+/* button */
+.villa-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: linear-gradient(45deg, #d4af37, #ffd86b);
+  color: #000;
+  transition: all 0.3s ease;
+}
+
+.villa-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}
+
+
+
+
+
+
+/* ================= HERO VIDEO INSIDE SECTION ================= */
+
+.hero-video-wrap {
+  position: relative;
+  overflow: hidden;
+  min-height: 80vh;
+  border-radius: 18px;
+}
+
+/* 🎥 video fills section */
+.hero-video-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.55) contrast(1.05);
+  z-index: 0;
+}
+
+/* overlay */
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,0.5),
+    rgba(77, 77, 77, 0)
+  );
+  z-index: 1;
+}
+
+/* content on top */
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 60px 40px;
+}
+
+/* left side */
+.hero-left {
+  flex: 1;
+}
+
+/* right content */
+.hero-right {
+  flex: 1;
+  color: #fff;
+}
+
+/* text styles */
+.hero-sub {
+  color: #d1d5db;
+  margin-top: 12px;
+}
+
+.hero-tagline {
+  color: #9ca3af;
+  margin: 10px 0 20px;
+  font-style: italic;
+}
+
+/* 📱 responsive */
+@media (max-width: 900px) {
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-left {
+    width: 80%;
+  }
+}

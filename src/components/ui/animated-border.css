@@ -1,0 +1,71 @@
+/* src/components/ui/animated-border.css */
+
+.animated-border {
+  position: relative;
+  border-radius: 16px;
+  padding: 2px; /* important for border thickness */
+  background: transparent;
+  overflow: hidden;
+}
+
+/* rotating gradient border layer */
+.animated-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+
+  background: conic-gradient(
+    from 0deg,
+    rgba(212, 175, 55, 0.15),
+    rgba(255, 214, 120, 0.12),
+    rgba(212, 175, 55, 0.15)
+  );
+
+  animation: rotateGradient 6s linear infinite;
+  z-index: 1;
+}
+
+/* glass inner content */
+.animated-border-inner {
+  position: relative;
+  z-index: 2;
+
+  border-radius: 14px;
+  padding: 20px;
+
+  background: rgba(10, 10, 10, 0.55);
+  backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* subtle glow */
+.animated-border::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+
+  background: conic-gradient(
+    from 0deg,
+    rgba(212, 175, 55, 0.25),
+    rgba(255, 214, 120, 0.18),
+    rgba(212, 175, 55, 0.25)
+  );
+
+  filter: blur(12px);
+  opacity: 0.35;
+  animation: rotateGradient 6s linear infinite;
+  z-index: 0;
+}
+
+@keyframes rotateGradient {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
