@@ -408,14 +408,6 @@ body {
   }
 }
 
-/* add to bottom of src/index.css */
-
-/* ensure the custom cursor CSS is loaded as fallback if you didn't import cursor.css */
-@import "./components/ui/cursor.css";
-@import "./components/ui/scrollprogress.css";
-@import "./components/ui/loader.css";
-@import "./components/ui/animated-border.css";
-
 /* small helpers for interactive states */
 a, button {
   cursor: none; /* hide default pointer so custom cursor is visible */
